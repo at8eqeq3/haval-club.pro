@@ -1,13 +1,20 @@
 ---
 title: Главная
 ---
-
-- @items.find_all('/events/*.md')[0..3].sort{ |x,y| y[:date] <=> x[:date] }.each do |item|
-  .col-3
-    .card
-      %img.card-img-top{ src: item[:image], alt: item[:title] }
-      .card-body
-        %a{ href: item.path }
-          %h4.card-title= item[:title]
-        %h6.card-subtitle.text-muted= item[:date]
-        %p.card-text= item.compiled_content
+.row
+  .col-6
+    %h4 События
+  .col-6.text-right
+    %a{ href: '/events/index.html' }
+      Все события
+      %i.fa.fa-angle-double-right
+.row
+  - @items.find_all('/events/*.md')[0..3].sort{ |x,y| y[:date] <=> x[:date] }.each do |item|
+    .col-3
+      .card
+        %img.card-img-top{ src: item[:image], alt: item[:title] }
+        .card-body
+          %a{ href: item.path }
+            %h4.card-title= item[:title]
+          %h6.card-subtitle.text-muted= item[:date]
+          %p.card-text= item.compiled_content

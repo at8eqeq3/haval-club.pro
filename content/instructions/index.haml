@@ -1,0 +1,9 @@
+.row
+  .col
+    %h2 Инструкции
+.row
+  .col-3
+    - %w( h2 h6 h6_coupe h8 h9 ).each do |model|
+      %ul.nav.flex-column
+        %li.nav-item
+          %a.nav-link{ href: '/instructions/' + model + '/index.html' }= model.gsub('_', ' ').capitalize

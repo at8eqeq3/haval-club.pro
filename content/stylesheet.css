@@ -7,20 +7,29 @@ body {
   text-align: center;
 }
 
+.menu {
+  background-color: #fafa80;
+}
+
 .menu .col {
-  text-align: center;
   padding: 10px;
+  text-align: center;
 }
 
 .menu .col a {
   color: #101010;
+  display: block;
   font-size: 1.1em;
   font-weight: bold;
   text-decoration: none;
+}
 
+.main {
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .footer {
-  margin-top: 10px;
   border-top: 1px solid #323232;
+  margin-top: 10px;
 }
