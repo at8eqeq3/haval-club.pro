@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
+compile '/index.html' do
+  filter :haml
+  layout '/default.*'
+end
+
 compile '/**/*.html' do
   layout '/default.*'
 end
@@ -25,4 +30,4 @@ compile '/**/*' do
   write item.identifier.to_s
 end
 
-layout '/**/*', :erb
+layout '/**/*', :haml

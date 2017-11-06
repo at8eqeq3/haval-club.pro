@@ -1,29 +1,35 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>A Brand New Nanoc Site - <%= @item[:title] %></title>
-    <link rel="stylesheet" href="/stylesheet.css">
-
-    <!-- you don't need to keep this, but it's cool for stats! -->
-    <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-  </head>
-  <body>
-    <div id="main">
-      <%= yield %>
-    </div>
-    <div id="sidebar">
-      <h2>Documentation</h2>
-      <ul>
-        <li><a href="http://nanoc.ws/doc/">Documentation</a></li>
-        <li><a href="http://nanoc.ws/doc/tutorial/">Tutorial</a></li>
-      </ul>
-      <h2>Community</h2>
-      <ul>
-        <li><a href="http://groups.google.com/group/nanoc/">Discussion group</a></li>
-        <li><a href="https://gitter.im/nanoc/nanoc">Gitter channel</a></li>
-        <li><a href="http://nanoc.ws/contributing/">Contributing</a></li>
-      </ul>
-    </div>
-  </body>
-</html>
+!!!
+%html{ lang: 'ru' }
+  %head
+    %meta{ charset: 'utf-8' }
+    %title
+      haval-club.pro -
+      = @item[:title]
+    %link{ rel: 'stylesheet', href: '/stylesheet.css' }
+    %link{ rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', integrity: 'sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb', crossorigin: 'anonymous' }
+    %link{ rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' }
+    %link{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans' }
+    %meta{ name: 'generator', content: 'Nanoc ' + Nanoc::VERSION }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
+  %body
+    .container
+      .row.header
+        .col
+          %img{ src: 'http://placeimg.com/1000/200/tech/sepia' }
+      .row.menu
+        .col
+          %a{ href: '/' }
+            %i.fa.fa-home
+        .col
+          %a{ href: 'forum.haval-club.pro' } Форум
+        .col
+          %a{ href: '/manuals' } Мануалы
+        .col
+          %a{ href: '/instructions' } Инструкции
+        .col
+          %a{ href: '/media' } Медиа
+      .row.main
+        = yield
+      .row.footer
+        %p
+          © 2017, haval-club.pro
