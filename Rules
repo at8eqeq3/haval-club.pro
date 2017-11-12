@@ -11,6 +11,12 @@ compile '/instructions/index.haml' do
   write @item.identifier.without_ext + '.html'
 end
 
+compile '/media/index.haml' do
+  filter :haml
+  layout '/default.*'
+  write @item.identifier.without_ext + '.html'
+end
+
 compile '/**/*.html' do
   layout '/default.*'
 end
@@ -39,3 +45,5 @@ end
 layout '/metrika.html', :erb
 
 layout '/**/*', :haml
+
+ignore '/api/yt/**/*'

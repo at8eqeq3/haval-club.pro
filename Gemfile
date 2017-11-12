@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
-gem 'nanoc'
+
 gem 'adsf'
-gem 'haml'
+gem 'google-api-client'
 gem 'guard-nanoc'
+gem 'haml'
+gem 'nanoc'
 gem 's3_website'
+gem 'w3c_validators'

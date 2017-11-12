@@ -1,0 +1,15 @@
+.row
+  .col
+    %h2 Видео
+- @items.find_all('/api/yt/playlists/*').each do |pl|
+  .row
+    .h3= pl[:title]
+  .row
+    - pl[:items].each do |pli|
+      .card.w-25
+        %img.card-img-top{ src: pli[:thumbnail], alt: pli[:title] }
+        .card-body
+          %a{ href: item.path }
+            %h4.card-title= pli[:title]
+          %h6.card-subtitle.text-muted= pli[:published_at]
+          %p.card-text= excerptize(pli[:description])
